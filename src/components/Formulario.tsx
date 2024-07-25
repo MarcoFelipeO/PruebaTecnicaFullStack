@@ -56,6 +56,7 @@ const Formulario: React.FC = () => {
           </FormFieldsContainer>
         </form>
       </FormSection>
+
       <FormSection>
         <SectionTitle>Datos del Vehículo:</SectionTitle>
         <form onSubmit={handleSubmit}>
@@ -80,6 +81,7 @@ const Formulario: React.FC = () => {
           <Button type="submit">Enviar</Button>
         </form>
       </FormSection>
+      
     </FormularioContainer>
   );
 };

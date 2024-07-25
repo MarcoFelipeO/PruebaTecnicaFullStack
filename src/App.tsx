@@ -9,7 +9,7 @@ const App: React.FC = () => {
   return (
     <Router>
       <Navbar />
-      <div style={{ paddingTop: '4rem' }}> {/* Ajusta el padding superior para dar espacio a la navbar */}
+      <div style={{ paddingTop: '4rem' }}> 
         <Routes>
           <Route path="/formulario" element={<Formulario />} />
           <Route path="/listado" element={<VehiculoListado />} />
