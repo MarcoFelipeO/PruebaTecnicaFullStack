@@ -19,7 +19,7 @@ export const NavbarContainer = styled.div`
 
 // Estilo para los enlaces
 export const NavLink = styled(Link)`
-  color: black;
+  color: blue;
   text-decoration: none;
   margin-left: 40px;
   margin-right: 40px;

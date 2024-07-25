@@ -28,7 +28,7 @@ export const Table = styled.table`
 
 export const Button = styled.button`
   padding: 5px 10px;
-  background-color: #dc3545;
+  background-color: blue;
   color: #fff;
   border: none;
   border-radius: 4px;

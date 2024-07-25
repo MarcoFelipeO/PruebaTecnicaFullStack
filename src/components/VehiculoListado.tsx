@@ -20,6 +20,12 @@ const VehiculoListado: React.FC = () => {
   const dispatch = useDispatch();
   const vehiculos: Vehiculo[] = useSelector((state: RootState) => state.vehiculos.vehiculos);
 
+  // Ordenar los vehículos por patente (o cualquier otro criterio si es necesario)
+  const vehiculosOrdenados = [...vehiculos].sort((a, b) => b.patente.localeCompare(a.patente));
+
+  // Obtener los últimos 10 registros
+  const ultimosVehiculos = vehiculosOrdenados.slice(0, 10);
+
   const handleEliminar = (patente: string) => {
     dispatch(eliminarVehiculo(patente));
   };
@@ -27,7 +33,7 @@ const VehiculoListado: React.FC = () => {
   return (
     <ListadoContainer>
       <h1>Lista formulario</h1>
-      {vehiculos.length === 0 ? (
+      {ultimosVehiculos.length === 0 ? (
         <p>No hay vehículos para mostrar.</p>
       ) : (
         <Table>
@@ -42,7 +48,7 @@ const VehiculoListado: React.FC = () => {
             </tr>
           </thead>
           <tbody>
-            {vehiculos.map((vehiculo: Vehiculo) => (
+            {ultimosVehiculos.map((vehiculo: Vehiculo) => (
               <tr key={vehiculo.patente}>
                 <td>{vehiculo.nombre}</td>
                 <td>{vehiculo.rut}</td>
