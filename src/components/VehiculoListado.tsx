@@ -5,15 +5,9 @@ import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../store/store';
 import { ListadoContainer, Table, Button } from './VehiculoListadoStyled';
 import { eliminarVehiculo } from '../store/vehiculosSlice';
+import { Vehiculo } from '../store/vehiculosSlice';
 
-interface Vehiculo {
-  rut: string;
-  nombre: string;
-  patente: string;
-  marca: string;
-  modelo: string;
-  precio: number;
-}
+
 
 const VehiculoListado: React.FC = () => {
   const dispatch = useDispatch();
