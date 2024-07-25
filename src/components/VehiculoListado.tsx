@@ -6,7 +6,6 @@ import { RootState } from '../store/store';
 import { ListadoContainer, Table, Button } from './VehiculoListadoStyled';
 import { eliminarVehiculo } from '../store/vehiculosSlice';
 
-// Definir el tipo Vehiculo aquí si no está exportado desde el slice
 interface Vehiculo {
   rut: string;
   nombre: string;
@@ -20,10 +19,8 @@ const VehiculoListado: React.FC = () => {
   const dispatch = useDispatch();
   const vehiculos: Vehiculo[] = useSelector((state: RootState) => state.vehiculos.vehiculos);
 
-  // Ordenar los vehículos por patente (o cualquier otro criterio si es necesario)
   const vehiculosOrdenados = [...vehiculos].sort((a, b) => b.patente.localeCompare(a.patente));
 
-  // Obtener los últimos 10 registros
   const ultimosVehiculos = vehiculosOrdenados.slice(0, 10);
 
   const handleEliminar = (patente: string) => {

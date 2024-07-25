@@ -8,7 +8,6 @@ import { FormularioContainer, FormField, Label, Input, Button, FormTitle, Sectio
 const Formulario: React.FC = () => {
   const dispatch = useDispatch();
 
-  // Estado local para cada campo del formulario
   const [rut, setRut] = useState('');
   const [nombre, setNombre] = useState('');
   const [patente, setPatente] = useState('');
@@ -16,11 +15,9 @@ const Formulario: React.FC = () => {
   const [modelo, setModelo] = useState('');
   const [precio, setPrecio] = useState('');
 
-  // Manejo del envío del formulario
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Despachar acción para agregar un nuevo vehículo
     dispatch(agregarVehiculo({
       rut,
       nombre,
@@ -30,7 +27,6 @@ const Formulario: React.FC = () => {
       precio: parseFloat(precio)
     }));
 
-    // Limpiar el formulario
     setRut('');
     setNombre('');
     setPatente('');
